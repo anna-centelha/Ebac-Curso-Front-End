@@ -1,0 +1,55 @@
+@breakpointMobile: ~"(max-width: 760px)";
+@breakpointTablet: ~"(min-width: 761px) and (max-width: 1023px)";
+
+.display {
+    display: flex;
+}
+
+.displayB {
+    display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @fontPrincipal;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #colors[backgroundColor];
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media @breakpointTablet {
+        max-width: 80%;
+        .products {
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+        }
+    }
+
+    @media @breakpointMobile {
+        max-width: 70%;
+
+        .products {
+            .displayB();
+        }
+
+        .product-item {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+section {
+    padding: 56px 0;
+}
