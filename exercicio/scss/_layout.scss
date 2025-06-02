@@ -1,0 +1,11 @@
+@use 'variables';
+
+.container {
+  max-width: variables.$container-width;
+  width: 100%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 56px 0;
+}
