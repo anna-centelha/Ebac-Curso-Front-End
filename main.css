@@ -1,0 +1,30 @@
+.product-list {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.product-list__item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.product-list__item--featured {
+  border-color: #007bff;
+  background-color: #e7f1ff;
+}
+.product-list__image {
+  max-width: 100%;
+  height: auto;
+}
+.product-list__name {
+  font-size: 1.2em;
+  margin: 10px 0 5px 0;
+}
+.product-list__description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/*# sourceMappingURL=main.css.map */
