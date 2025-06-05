@@ -1,8 +1,8 @@
-// src/slices/contactsSlice.tsx
+
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-// src/slices/contactsSlice.tsx
+
 interface Contact {
   id: string;
   name: string;

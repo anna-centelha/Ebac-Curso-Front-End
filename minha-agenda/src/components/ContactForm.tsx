@@ -94,7 +94,7 @@ interface Contact {
 interface ContactFormProps {
   editContact?: Contact;
   onEditComplete?: () => void;
-  onAddComplete?: () => void; // Para fechar o formulário após adicionar
+  onAddComplete?: () => void;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ editContact, onEditComplete, onAddComplete }) => {
@@ -103,14 +103,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ editContact, onEditComplete, 
     name: '',
     email: '',
     phone: '',
-    category: 'Todos', // Valor inicial para categoria
+    category: 'Todos',
   });
 
   useEffect(() => {
     if (editContact) {
       setContact(editContact);
     } else {
-      // Limpa o formulário quando não está em modo de edição
       setContact({ name: '', email: '', phone: '', category: 'Todos' });
     }
   }, [editContact]);
@@ -139,8 +138,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ editContact, onEditComplete, 
 
   const handleCancel = () => {
     setContact({ name: '', email: '', phone: '', category: 'Todos' });
-    onEditComplete?.(); // Se estiver editando
-    onAddComplete?.(); // Se estiver adicionando
+    onEditComplete?.();
+    onAddComplete?.(); 
   };
 
   return (
@@ -155,19 +154,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ editContact, onEditComplete, 
         />
         <Input
           name="email"
-          type="email" // Melhor tipo para email
+          type="email" 
           placeholder="E-mail"
           value={contact.email}
           onChange={handleChange}
         />
         <Input
           name="phone"
-          type="tel" // Melhor tipo para telefone
+          type="tel"
           placeholder="Telefone"
           value={contact.phone}
           onChange={handleChange}
         />
-        {/* Campo para selecionar a categoria */}
+        {}
         <select name="category" value={contact.category} onChange={handleChange} style={{
             padding: '1rem',
             border: '1px solid var(--border-color)',
@@ -175,7 +174,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ editContact, onEditComplete, 
             fontSize: '1rem',
             color: 'var(--text-color)',
             backgroundColor: 'var(--background-color)',
-            appearance: 'none', // Remove o estilo padrão do navegador
+            appearance: 'none', 
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right 0.7em top 50%',

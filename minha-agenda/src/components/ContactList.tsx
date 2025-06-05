@@ -1,12 +1,11 @@
-// src/components/ContactList.tsx
+
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import type { RootState } from '../store/store'; // <--- O 'type' antes de { RootState } é uma boa prática
+import type { RootState } from '../store/store';
 import { removeContact } from '../slices/contactsSlice';
 import ContactForm from './ContactForm';
 import styled from 'styled-components';
 
-// Novos Styled Components para a lista e os itens
 const ListContainer = styled.div`
   background-color: var(--card-background);
   padding: 1.5rem;
@@ -115,14 +114,13 @@ const ActionButton = styled.button`
   }
 `;
 
-// Interface Contact precisa ser atualizada para incluir category
+
 interface Contact {
   id: string;
   name: string;
   email: string;
   phone: string;
-  category: string; // Adicionado
-}
+  category: string; 
 
 interface ContactListProps {
   filter: string;
@@ -134,16 +132,16 @@ const ContactList: React.FC<ContactListProps> = ({ filter, searchTerm }) => {
    const dispatch = useDispatch();
   const [editing, setEditing] = useState<Contact | null>(null);
 
-  // Mapeamento de cores para as categorias (personalize como quiser)
+
   const categoryColors: { [key: string]: string } = {
-    Familia: '#8A2BE2', // Roxo
-    Trabalho: '#FFD700', // Dourado
-    Amigos: '#1E90FF', // Azul claro
-    Favoritos: '#FF4500', // Laranja avermelhado
-    Todos: '#6c757d', // Cinza padrão
+    Familia: '#8A2BE2', 
+    Trabalho: '#FFD700', 
+    Amigos: '#1E90FF', 
+    Favoritos: '#FF4500',
+    Todos: '#6c757d', 
   };
 
-  const filteredContacts = contacts.filter((contact: Contact) => { // <--- ADICIONE ': Contact' AQUI
+  const filteredContacts = contacts.filter((contact: Contact) => { 
     const matchesFilter = filter === 'Todos' || contact.category === filter;
     const matchesSearch = contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -163,7 +161,7 @@ const ContactList: React.FC<ContactListProps> = ({ filter, searchTerm }) => {
         {filteredContacts.length === 0 ? (
           <p>Nenhum contato encontrado.</p>
         ) : (
-          filteredContacts.map((contact: Contact) => ( // <--- ADICIONE ': Contact' AQUI TAMBÉM
+          filteredContacts.map((contact: Contact) => (
             <ListItem key={contact.id}>
               <ContactDetails>
                 <ContactName>{contact.name}</ContactName>

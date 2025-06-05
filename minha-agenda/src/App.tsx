@@ -1,10 +1,10 @@
-// src/App.tsx
+
 import React, { useState } from 'react';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import styled from 'styled-components';
 
-// Novos Styled Components para o layout principal
+
 const AppContainer = styled.div`
   display: flex;
   min-height: 100vh; /* Ocupa a altura total da viewport */
@@ -109,9 +109,9 @@ const AddContactButton = styled.button`
 `;
 
 function App() {
-  const [filter, setFilter] = useState<string>('Todos'); // Para gerenciar o filtro de contatos
-  const [searchTerm, setSearchTerm] = useState<string>(''); // Para a barra de busca
-  const [showContactForm, setShowContactForm] = useState<boolean>(false); // Para mostrar/esconder o formulário
+  const [filter, setFilter] = useState<string>('Todos'); 
+  const [searchTerm, setSearchTerm] = useState<string>(''); 
+  const [showContactForm, setShowContactForm] = useState<boolean>(false);
 
   return (
     <AppContainer>
@@ -135,9 +135,9 @@ function App() {
 
       <MainContent>
         <Header>
-          <Title>Contatos</Title> {/* O título da imagem 2 */}
-          {/* Poderia ter um contador de contatos aqui, como na imagem 2 */}
-          {/* <span>3 Total</span> */}
+          <Title>Contatos</Title> {}
+          {}
+          {}
         </Header>
 
         {showContactForm && (
